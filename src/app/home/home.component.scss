@@ -1,0 +1,6 @@
+@import "../../variables";
+
+:host {
+  height: calc(100% - $navbar-height - $subheading-container-height - 40px);
+  display: block;
+}

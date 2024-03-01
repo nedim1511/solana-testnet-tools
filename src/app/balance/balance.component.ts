@@ -28,6 +28,7 @@ import {ToastModule} from "primeng/toast";
 export class BalanceComponent implements OnInit {
   public address: string = '';
   public balance = 0;
+  public loading = false;
 
   constructor(private cdr: ChangeDetectorRef, private solanaService: SolanaService, private messageService: MessageService) {
   }
@@ -45,6 +46,18 @@ export class BalanceComponent implements OnInit {
 
   private populateAddressFromLocalStorage() {
     this.address = localStorage.getItem(LocalStorageKeys.Address) || '';
+  }
+
+  public refreshClick() {
+    this.loading = true;
+    this.getFaucetBalance().then((balance) => {
+      this.balance = balance;
+      this.loading = false;
+      this.cdr.markForCheck();
+    }).catch(() => {
+      this.loading = false;
+      this.cdr.markForCheck();
+    });
   }
 
   public async getFaucetBalance(): Promise<number> {

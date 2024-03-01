@@ -2,6 +2,16 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
+@import "variables";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
 
 .component-wrapper {
   display: flex;
@@ -10,4 +20,5 @@
   flex-direction: column;
   max-width: 50vh;
   margin: 0 auto;
+  height: calc(100% - $subheading-container-height - $navbar-height);
 }
