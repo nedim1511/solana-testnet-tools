@@ -1,0 +1,15 @@
+<div class="component-wrapper">
+  <h2>Your Solana Testnet Wallet Address</h2>
+
+  <p-inputGroup>
+    <p-inputGroupAddon>
+      <i class="pi pi-wallet"></i>
+    </p-inputGroupAddon>
+    <input [(ngModel)]="address" pInputText placeholder="Paste your Solana testnet base58 address" />
+  </p-inputGroup>
+
+  <p class="text-center my-5">We will save this address to local storage so you don't have to paste it all the time when you come here..</p>
+
+  <p-button (click)="save()" label="Save" icon="pi pi-save"></p-button>
+
+</div>

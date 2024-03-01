@@ -1,0 +1,15 @@
+<div class="component-wrapper">
+  <h2>Your Solana Testnet Wallet Address</h2>
+
+  <p-inputGroup>
+    <p-inputGroupAddon>
+      <i class="pi pi-wallet"></i>
+    </p-inputGroupAddon>
+    <input [(ngModel)]="address" pInputText placeholder="Paste your Solana testnet base58 address" />
+  </p-inputGroup>
+
+  <p class="text-center my-5">Your balance is <strong>{{ balance }} SOL</strong></p>
+
+  <p-button (click)="getFaucetBalance()" label="Refresh" icon="pi pi-refresh"></p-button>
+
+</div>

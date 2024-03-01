@@ -1,0 +1,14 @@
+<div class="component-wrapper">
+  <h2>Airdrop Solana to your <u>Testnet</u> Wallet</h2>
+
+  <p-inputGroup>
+    <p-inputGroupAddon>
+      <i class="pi pi-wallet"></i>
+    </p-inputGroupAddon>
+    <input [(ngModel)]="address" pInputText placeholder="Paste your Solana testnet base58 address" />
+  </p-inputGroup>
+
+  <p>We will send 1 SOL to the address entered above.</p>
+
+  <p-button [loading]="loading" (click)="submit()" label="Send 1 SOL" icon="pi pi-check"></p-button>
+</div>
